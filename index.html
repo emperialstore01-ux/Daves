@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emperial Top Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="left-section">
+                <div class="logo">
+                    <img src="images/emperial-logo.png" alt="Logo Emperial Top Up" data-target="welcome-section">
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-target="welcome-section" data-lang-key="home">Accueil</a></li>
+                        <li><a href="#" class="nav-link" data-target="games-section" data-lang-key="games">Jeux</a></li>
+                        <li><a href="#" class="nav-link" data-target="cart-section" data-lang-key="cart">Panier</a></li>
+                        <li><a href="#" class="nav-link" data-target="history-section" data-lang-key="history">Historique</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="right-section">
+                <select id="currency-select">
+                    <option value="HTG">HTG</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="DOP">DOP</option>
+                    <option value="BRL">BRL</option>
+                </select>
+                <select id="lang-select">
+                    <option value="fr">🇫🇷</option>
+                    <option value="en">🇬🇧</option>
+                    <option value="es">🇪🇸</option>
+                </select>
+                <button class="icon-button" id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                <button class="icon-button" data-target="cart-section" aria-label="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-container hidden">
+        <input type="text" id="game-search" placeholder="Rechercher un jeu...">
+    </div>
+
+    <button class="floating-cart-btn" data-target="cart-section" style="display: none;">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </button>
+
+    <main>
+        <section id="welcome-section" class="page-section active">
+            <h1 class="welcome-title" data-lang-key="welcome-message">BIENVENUE</h1>
+            <p class="welcome-text" data-lang-key="welcome-tagline">Rechargez vos jeux préférés en toute simplicité et sécurité. Des offres exclusives vous attendent !</p>
+            <button class="start-button" data-lang-key="start-now" data-target="games-section">COMMENCER MAINTENANT</button>
+        </section>
+
+        <section id="games-section" class="page-section">
+            <h2 class="section-title" data-lang-key="games">Jeux</h2>
+            <div class="separator"></div>
+
+            <h3 class="category-title">Jeux Mobiles Populaires</h3>
+            <div class="games-grid">
+                <div class="game-card" data-game-id="free-fire">
+                    <img src="images/free-fire.png" alt="Logo de Free Fire">
+                    <h3>Free Fire</h3>
+                </div>
+                <div class="game-card" data-game-id="call-of-duty">
+                    <img src="images/cod-mobile.png" alt="Logo de Call of Duty Mobile">
+                    <h3>Call of Duty Mobile</h3>
+                </div>
+                <div class="game-card" data-game-id="pubg-mobile">
+                    <img src="images/pubg-mobile.png" alt="Logo de PUBG Mobile">
+                    <h3>PUBG Mobile</h3>
+                </div>
+                <div class="game-card" data-game-id="fortnite">
+                    <img src="images/fortnite.png" alt="Logo de Fortnite">
+                    <h3>Fortnite</h3>
+                </div>
+                <div class="game-card" data-game-id="valorant">
+                    <img src="images/valorant.png" alt="Logo de Valorant">
+                    <h3>Valorant</h3>
+                </div>
+                <div class="game-card" data-game-id="apex-legends">
+                    <img src="images/apex-legends.png" alt="Logo d'Apex Legends">
+                    <h3>Apex Legends</h3>
+                </div>
+            </div>
+
+            <h3 class="category-title">Autres Jeux Populaires</h3>
+            <div class="games-grid">
+                <div class="game-card" data-game-id="league-of-legends">
+                    <img src="images/league-of-legends.png" alt="Logo de League of Legends">
+                    <h3>League of Legends</h3>
+                </div>
+                <div class="game-card" data-game-id="roblox">
+                    <img src="images/roblox.png" alt="Logo de Roblox">
+                    <h3>Roblox</h3>
+                </div>
+                <div class="game-card" data-game-id="gta-online">
+                    <img src="images/gta-online.png" alt="Logo de GTA Online">
+                    <h3>GTA Online</h3>
+                </div>
+                <div class="game-card" data-game-id="clash-royale">
+                    <img src="images/clash-royale.png" alt="Logo de Clash Royale">
+                    <h3>Clash Royale</h3>
+                </div>
+                <div class="game-card" data-game-id="dls">
+                    <img src="images/dream-league-soccer.png" alt="Logo de Dream League Soccer">
+                    <h3>Dream League Soccer</h3>
+                </div>
+                <div class="game-card" data-game-id="ea-fc">
+                    <img src="images/ea-fc-mobile.png" alt="Logo de EA FC Mobile">
+                    <h3>EA FC Mobile</h3>
+                </div>
+                <div class="game-card" data-game-id="delta-force">
+                    <img src="images/delta-force.png" alt="Logo de Delta Force">
+                    <h3>Delta Force</h3>
+                </div>
+                <div class="game-card" data-game-id="world-of-warcraft">
+                    <img src="images/world-of-warcraft.png" alt="Logo de World of Warcraft">
+                    <h3>World of Warcraft</h3>
+                </div>
+            </div>
+
+            <h3 class="category-title">Cartes et Abonnements</h3>
+            <div class="games-grid">
+                <div class="game-card" data-game-id="steam">
+                    <img src="images/steam.png" alt="Logo de Steam">
+                    <h3>Steam</h3>
+                </div>
+            </div>
+
+            <h3 class="category-title">Jeux Casual</h3>
+            <div class="games-grid">
+                <div class="game-card" data-game-id="pokemon-go">
+                    <img src="images/pokemon-go.png" alt="Logo de Pokémon Go">
+                    <h3>Pokémon Go</h3>
+                </div>
+                <div class="game-card" data-game-id="monopoly-go">
+                    <img src="images/monopoly-go.png" alt="Logo de Monopoly Go">
+                    <h3>Monopoly Go</h3>
+                </div>
+                <div class="game-card" data-game-id="candy-crush-saga">
+                    <img src="images/candy-crush-saga.png" alt="Logo de Candy Crush Saga">
+                    <h3>Candy Crush Saga</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Fire - 8 articles -->
+        <section id="free-fire-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Free Fire</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Diamants</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Free Fire" data-item-name="100 Diamants">
+                        <h2>100 Diamants</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="210 Diamants">
+                        <h2>210 Diamants</h2>
+                        <p class="price" data-price-htg="360"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="530 Diamants">
+                        <h2>530 Diamants</h2>
+                        <p class="price" data-price-htg="850"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="1080 Diamants">
+                        <h2>1080 Diamants</h2>
+                        <p class="price" data-price-htg="1700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="2200 Diamants">
+                        <h2>2200 Diamants</h2>
+                        <p class="price" data-price-htg="3500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="4400 Diamants">
+                        <h2>4400 Diamants</h2>
+                        <p class="price" data-price-htg="7000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="6600 Diamants">
+                        <h2>6600 Diamants</h2>
+                        <p class="price" data-price-htg="10500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Free Fire" data-item-name="11000 Diamants">
+                        <h2>11000 Diamants</h2>
+                        <p class="price" data-price-htg="17500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBG Mobile - 8 articles -->
+        <section id="pubg-mobile-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres PUBG Mobile</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs UC</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="PUBG Mobile" data-item-name="60 UC">
+                        <h2>60 UC</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="325 UC">
+                        <h2>325 UC</h2>
+                        <p class="price" data-price-htg="850"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="660 UC">
+                        <h2>660 UC</h2>
+                        <p class="price" data-price-htg="1700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="1800 UC">
+                        <h2>1800 UC</h2>
+                        <p class="price" data-price-htg="4500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="3600 UC">
+                        <h2>3600 UC</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="6000 UC">
+                        <h2>6000 UC</h2>
+                        <p class="price" data-price-htg="15000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="10000 UC">
+                        <h2>10000 UC</h2>
+                        <p class="price" data-price-htg="25000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="PUBG Mobile" data-item-name="18000 UC">
+                        <h2>18000 UC</h2>
+                        <p class="price" data-price-htg="45000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call of Duty Mobile - 8 articles -->
+        <section id="call-of-duty-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Call of Duty Mobile</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Points</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Call of Duty" data-item-name="80 CP">
+                        <h2>80 CP</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="400 CP">
+                        <h2>400 CP</h2>
+                        <p class="price" data-price-htg="675"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="800 CP">
+                        <h2>800 CP</h2>
+                        <p class="price" data-price-htg="1350"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="2000 CP">
+                        <h2>2000 CP</h2>
+                        <p class="price" data-price-htg="3350"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="4000 CP">
+                        <h2>4000 CP</h2>
+                        <p class="price" data-price-htg="6700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="8000 CP">
+                        <h2>8000 CP</h2>
+                        <p class="price" data-price-htg="13400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="12000 CP">
+                        <h2>12000 CP</h2>
+                        <p class="price" data-price-htg="20100"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Call of Duty" data-item-name="20000 CP">
+                        <h2>20000 CP</h2>
+                        <p class="price" data-price-htg="33500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DLS - 8 articles (selon votre structure) -->
+        <section id="dls-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres DLS</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Diamants</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="DLS" data-item-name="75 Diamants">
+                        <h2>75 Diamants</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="200 Diamants">
+                        <h2>200 Diamants</h2>
+                        <p class="price" data-price-htg="360"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="450 Diamants">
+                        <h2>450 Diamants</h2>
+                        <p class="price" data-price-htg="850"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="1000 Diamants">
+                        <h2>1000 Diamants</h2>
+                        <p class="price" data-price-htg="1700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="2500 Diamants">
+                        <h2>2500 Diamants</h2>
+                        <p class="price" data-price-htg="4250"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="5000 Diamants">
+                        <h2>5000 Diamants</h2>
+                        <p class="price" data-price-htg="8500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="8000 Diamants">
+                        <h2>8000 Diamants</h2>
+                        <p class="price" data-price-htg="13600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="DLS" data-item-name="15000 Diamants">
+                        <h2>15000 Diamants</h2>
+                        <p class="price" data-price-htg="25500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- EA FC Mobile - 8 articles (selon votre structure) -->
+        <section id="ea-fc-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres EA FC</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Points</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="EA FC" data-item-name="100 Points FC">
+                        <h2>100 Points FC</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="300 Points FC">
+                        <h2>300 Points FC</h2>
+                        <p class="price" data-price-htg="540"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="700 Points FC">
+                        <h2>700 Points FC</h2>
+                        <p class="price" data-price-htg="1260"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="1500 Points FC">
+                        <h2>1500 Points FC</h2>
+                        <p class="price" data-price-htg="2700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="3000 Points FC">
+                        <h2>3000 Points FC</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="6000 Points FC">
+                        <h2>6000 Points FC</h2>
+                        <p class="price" data-price-htg="10800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="9000 Points FC">
+                        <h2>9000 Points FC</h2>
+                        <p class="price" data-price-htg="16200"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="EA FC" data-item-name="15000 Points FC">
+                        <h2>15000 Points FC</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delta Force - 8 articles (selon votre structure) -->
+        <section id="delta-force-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Delta Force</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Diamants</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Delta Force" data-item-name="100 Diamants">
+                        <h2>100 Diamants</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="300 Diamants">
+                        <h2>300 Diamants</h2>
+                        <p class="price" data-price-htg="540"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="600 Diamants">
+                        <h2>600 Diamants</h2>
+                        <p class="price" data-price-htg="1080"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="1200 Diamants">
+                        <h2>1200 Diamants</h2>
+                        <p class="price" data-price-htg="2160"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="2500 Diamants">
+                        <h2>2500 Diamants</h2>
+                        <p class="price" data-price-htg="4500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="5000 Diamants">
+                        <h2>5000 Diamants</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="8000 Diamants">
+                        <h2>8000 Diamants</h2>
+                        <p class="price" data-price-htg="14400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Delta Force" data-item-name="12000 Diamants">
+                        <h2>12000 Diamants</h2>
+                        <p class="price" data-price-htg="21600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fortnite - 8 articles -->
+        <section id="fortnite-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Fortnite</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de V-Bucks</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Fortnite" data-item-name="500 V-Bucks">
+                        <h2>500 V-Bucks</h2>
+                        <p class="price" data-price-htg="675"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="1000 V-Bucks">
+                        <h2>1000 V-Bucks</h2>
+                        <p class="price" data-price-htg="1350"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="2800 V-Bucks">
+                        <h2>2800 V-Bucks</h2>
+                        <p class="price" data-price-htg="3780"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="5000 V-Bucks">
+                        <h2>5000 V-Bucks</h2>
+                        <p class="price" data-price-htg="6750"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="13500 V-Bucks">
+                        <h2>13500 V-Bucks</h2>
+                        <p class="price" data-price-htg="18225"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="20000 V-Bucks">
+                        <h2>20000 V-Bucks</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="30000 V-Bucks">
+                        <h2>30000 V-Bucks</h2>
+                        <p class="price" data-price-htg="40500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Fortnite" data-item-name="50000 V-Bucks">
+                        <h2>50000 V-Bucks</h2>
+                        <p class="price" data-price-htg="67500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valorant - 8 articles -->
+        <section id="valorant-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Valorant</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Points VP</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Valorant" data-item-name="200 VP">
+                        <h2>200 VP</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="500 VP">
+                        <h2>500 VP</h2>
+                        <p class="price" data-price-htg="360"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="1000 VP">
+                        <h2>1000 VP</h2>
+                        <p class="price" data-price-htg="675"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="2000 VP">
+                        <h2>2000 VP</h2>
+                        <p class="price" data-price-htg="1350"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="4000 VP">
+                        <h2>4000 VP</h2>
+                        <p class="price" data-price-htg="2700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="8000 VP">
+                        <h2>8000 VP</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="12000 VP">
+                        <h2>12000 VP</h2>
+                        <p class="price" data-price-htg="8100"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Valorant" data-item-name="20000 VP">
+                        <h2>20000 VP</h2>
+                        <p class="price" data-price-htg="13500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apex Legends - 8 articles (selon votre structure) -->
+        <section id="apex-legends-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Apex Legends</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Coins</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Apex Legends" data-item-name="100 Coins">
+                        <h2>100 Coins</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="250 Coins">
+                        <h2>250 Coins</h2>
+                        <p class="price" data-price-htg="450"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="500 Coins">
+                        <h2>500 Coins</h2>
+                        <p class="price" data-price-htg="900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="1000 Coins">
+                        <h2>1000 Coins</h2>
+                        <p class="price" data-price-htg="1800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="2000 Coins">
+                        <h2>2000 Coins</h2>
+                        <p class="price" data-price-htg="3600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="4000 Coins">
+                        <h2>4000 Coins</h2>
+                        <p class="price" data-price-htg="7200"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="6000 Coins">
+                        <h2>6000 Coins</h2>
+                        <p class="price" data-price-htg="10800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Apex Legends" data-item-name="10000 Coins">
+                        <h2>10000 Coins</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roblox - 8 articles -->
+        <section id="roblox-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Roblox</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Robux</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Roblox" data-item-name="80 Robux">
+                        <h2>80 Robux</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="400 Robux">
+                        <h2>400 Robux</h2>
+                        <p class="price" data-price-htg="675"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="800 Robux">
+                        <h2>800 Robux</h2>
+                        <p class="price" data-price-htg="1350"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="1700 Robux">
+                        <h2>1700 Robux</h2>
+                        <p class="price" data-price-htg="2870"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="3400 Robux">
+                        <h2>3400 Robux</h2>
+                        <p class="price" data-price-htg="5740"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="10000 Robux">
+                        <h2>10000 Robux</h2>
+                        <p class="price" data-price-htg="16900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="20000 Robux">
+                        <h2>20000 Robux</h2>
+                        <p class="price" data-price-htg="33800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Roblox" data-item-name="40000 Robux">
+                        <h2>40000 Robux</h2>
+                        <p class="price" data-price-htg="67600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- League of Legends - 8 articles (selon votre structure) -->
+        <section id="league-of-legends-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres League of Legends</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de RP</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="League of Legends" data-item-name="400 RP">
+                        <h2>400 RP</h2>
+                        <p class="price" data-price-htg="720"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="800 RP">
+                        <h2>800 RP</h2>
+                        <p class="price" data-price-htg="1440"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="1600 RP">
+                        <h2>1600 RP</h2>
+                        <p class="price" data-price-htg="2880"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="3000 RP">
+                        <h2>3000 RP</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="6000 RP">
+                        <h2>6000 RP</h2>
+                        <p class="price" data-price-htg="10800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="10000 RP">
+                        <h2>10000 RP</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="15000 RP">
+                        <h2>15000 RP</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="League of Legends" data-item-name="25000 RP">
+                        <h2>25000 RP</h2>
+                        <p class="price" data-price-htg="45000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- World of Warcraft - 8 articles (selon votre structure) -->
+        <section id="world-of-warcraft-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres World of Warcraft</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Balance</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="World of Warcraft" data-item-name="5$ Balance">
+                        <h2>5$ Balance</h2>
+                        <p class="price" data-price-htg="900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="10$ Balance">
+                        <h2>10$ Balance</h2>
+                        <p class="price" data-price-htg="1800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="20$ Balance">
+                        <h2>20$ Balance</h2>
+                        <p class="price" data-price-htg="3600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="30$ Balance">
+                        <h2>30$ Balance</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="50$ Balance">
+                        <h2>50$ Balance</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="80$ Balance">
+                        <h2>80$ Balance</h2>
+                        <p class="price" data-price-htg="14400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="100$ Balance">
+                        <h2>100$ Balance</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="World of Warcraft" data-item-name="150$ Balance">
+                        <h2>150$ Balance</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steam - 8 articles (selon votre structure) -->
+        <section id="steam-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Steam</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Cartes Cadeaux</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Steam" data-item-name="5$ Wallet">
+                        <h2>5$ Wallet</h2>
+                        <p class="price" data-price-htg="900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="10$ Wallet">
+                        <h2>10$ Wallet</h2>
+                        <p class="price" data-price-htg="1800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="20$ Wallet">
+                        <h2>20$ Wallet</h2>
+                        <p class="price" data-price-htg="3600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="30$ Wallet">
+                        <h2>30$ Wallet</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="50$ Wallet">
+                        <h2>50$ Wallet</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="75$ Wallet">
+                        <h2>75$ Wallet</h2>
+                        <p class="price" data-price-htg="13500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="100$ Wallet">
+                        <h2>100$ Wallet</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Steam" data-item-name="150$ Wallet">
+                        <h2>150$ Wallet</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GTA Online - 8 articles (selon votre structure) -->
+        <section id="gta-online-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres GTA Online</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Shark Cards</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="GTA Online" data-item-name="5$ Shark Card">
+                        <h2>5$ Shark Card</h2>
+                        <p class="price" data-price-htg="900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="10$ Shark Card">
+                        <h2>10$ Shark Card</h2>
+                        <p class="price" data-price-htg="1800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="20$ Shark Card">
+                        <h2>20$ Shark Card</h2>
+                        <p class="price" data-price-htg="3600"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="30$ Shark Card">
+                        <h2>30$ Shark Card</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="50$ Shark Card">
+                        <h2>50$ Shark Card</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="75$ Shark Card">
+                        <h2>75$ Shark Card</h2>
+                        <p class="price" data-price-htg="13500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="100$ Shark Card">
+                        <h2>100$ Shark Card</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="GTA Online" data-item-name="150$ Shark Card">
+                        <h2>150$ Shark Card</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clash Royale - 8 articles (selon votre structure) -->
+        <section id="clash-royale-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Clash Royale</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Gemmes</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Clash Royale" data-item-name="80 Gemmes">
+                        <h2>80 Gemmes</h2>
+                        <p class="price" data-price-htg="144"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="200 Gemmes">
+                        <h2>200 Gemmes</h2>
+                        <p class="price" data-price-htg="360"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="500 Gemmes">
+                        <h2>500 Gemmes</h2>
+                        <p class="price" data-price-htg="900"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="1200 Gemmes">
+                        <h2>1200 Gemmes</h2>
+                        <p class="price" data-price-htg="2160"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="2500 Gemmes">
+                        <h2>2500 Gemmes</h2>
+                        <p class="price" data-price-htg="4500"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="5000 Gemmes">
+                        <h2>5000 Gemmes</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="8000 Gemmes">
+                        <h2>8000 Gemmes</h2>
+                        <p class="price" data-price-htg="14400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Clash Royale" data-item-name="14000 Gemmes">
+                        <h2>14000 Gemmes</h2>
+                        <p class="price" data-price-htg="25200"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pokémon Go - 8 articles -->
+        <section id="pokemon-go-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Pokémon Go</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de PokéPièces</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Pokémon Go" data-item-name="100 PokéPièces">
+                        <h2>100 PokéPièces</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="550 PokéPièces">
+                        <h2>550 PokéPièces</h2>
+                        <p class="price" data-price-htg="850"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="1200 PokéPièces">
+                        <h2>1200 PokéPièces</h2>
+                        <p class="price" data-price-htg="1700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="2500 PokéPièces">
+                        <h2>2500 PokéPièces</h2>
+                        <p class="price" data-price-htg="3750"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="5200 PokéPièces">
+                        <h2>5200 PokéPièces</h2>
+                        <p class="price" data-price-htg="7800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="14500 PokéPièces">
+                        <h2>14500 PokéPièces</h2>
+                        <p class="price" data-price-htg="21750"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="20000 PokéPièces">
+                        <h2>20000 PokéPièces</h2>
+                        <p class="price" data-price-htg="30000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Pokémon Go" data-item-name="30000 PokéPièces">
+                        <h2>30000 PokéPièces</h2>
+                        <p class="price" data-price-htg="45000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monopoly Go - 8 articles (selon votre structure) -->
+        <section id="monopoly-go-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Monopoly Go</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Dés</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Monopoly Go" data-item-name="100 Dés">
+                        <h2>100 Dés</h2>
+                        <p class="price" data-price-htg="180"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="300 Dés">
+                        <h2>300 Dés</h2>
+                        <p class="price" data-price-htg="540"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="700 Dés">
+                        <h2>700 Dés</h2>
+                        <p class="price" data-price-htg="1260"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="1500 Dés">
+                        <h2>1500 Dés</h2>
+                        <p class="price" data-price-htg="2700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="3000 Dés">
+                        <h2>3000 Dés</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="6000 Dés">
+                        <h2>6000 Dés</h2>
+                        <p class="price" data-price-htg="10800"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="9000 Dés">
+                        <h2>9000 Dés</h2>
+                        <p class="price" data-price-htg="16200"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Monopoly Go" data-item-name="15000 Dés">
+                        <h2>15000 Dés</h2>
+                        <p class="price" data-price-htg="27000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candy Crush Saga - 8 articles (selon votre structure) -->
+        <section id="candy-crush-saga-offers-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title">Offres Candy Crush Saga</h2>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="special-title">Packs de Lingots d'Or</h3>
+                <div class="offers-grid">
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="50 Lingots d'Or">
+                        <h2>50 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="90"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="150 Lingots d'Or">
+                        <h2>150 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="270"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="300 Lingots d'Or">
+                        <h2>300 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="540"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="800 Lingots d'Or">
+                        <h2>800 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="1440"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="1500 Lingots d'Or">
+                        <h2>1500 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="2700"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="3000 Lingots d'Or">
+                        <h2>3000 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="5400"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="5000 Lingots d'Or">
+                        <h2>5000 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="9000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                    <div class="card" data-game="Candy Crush Saga" data-item-name="10000 Lingots d'Or">
+                        <h2>10000 Lingots d'Or</h2>
+                        <p class="price" data-price-htg="18000"></p>
+                        <button class="add-to-cart-btn">🛒 Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="cart-title">Votre Panier</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="cart-items-container">
+                    </div>
+                <div class="cart-summary">
+                    <p><span data-lang-key="cart-total">Total :</span> <span id="cart-total-amount"></span></p>
+                    <button class="checkout-btn" data-lang-key="checkout-button">Procéder au paiement</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page de paiement complète avec le formulaire -->
+        <section id="checkout-page" class="page-section">
+            <div class="page-header container">
+                <button class="back-button" id="cancel-checkout-btn"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="checkout-page-title">Paiement</h2>
+                </div>
+            </div>
+            <div class="container checkout-form-container">
+                <div id="checkout-summary-details">
+                    <!-- Récapitulatif de la commande -->
+                </div>
+                <div class="checkout-total-label">
+                    <span data-lang-key="checkout-total">Total à payer :</span>
+                    <span id="checkout-total-amount"></span>
+                </div>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="player-id" data-lang-key="player-id-label">ID du joueur *</label>
+                        <input type="text" id="player-id" name="player-id" placeholder="Ex: 123456789" required 
+                               pattern="[0-9]{6,12}" title="L'ID doit contenir entre 6 et 12 chiffres">
+                        <span id="player-id-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="player-name" data-lang-key="player-name-label">Nom dans le jeu (optionnel)</label>
+                        <input type="text" id="player-name" name="player-name" placeholder="Ex: JhonDoe"
+                               pattern="[A-Za-z0-9_]{3,20}" title="3-20 caractères (lettres, chiffres, underscore)">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email *</label>
+                        <input type="email" id="customer-email" name="customer-email" placeholder="Ex: johndoe@gmail.com" required>
+                        <span id="customer-email-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Téléphone *</label>
+                        <input type="tel" id="customer-phone" name="customer-phone" placeholder="Ex: +509 1234 5678" required
+                               pattern="[\+]?[0-9\s\-\(\)]{8,}" title="Format de téléphone international accepté">
+                        <span id="customer-phone-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="server-select">Serveur *</label>
+                        <select id="server-select" name="server" required>
+                            <option value="" disabled selected>Sélectionnez un serveur</option>
+                            <option value="Asia">Asie</option>
+                            <option value="North America">Amérique du Nord</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Middle East">Moyen-Orient</option>
+                            <option value="Latin America">Amérique Latine</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method" data-lang-key="payment-method-label">Méthode de paiement *</label>
+                        <select id="payment-method" name="payment-method" required>
+                            <option value="" disabled selected data-lang-key="select-payment-method">Sélectionnez une méthode</option>
+                            <option value="MonCash">MonCash</option>
+                            <option value="NatCash">NatCash</option>
+                            <option value="CashApp">Cash App</option>
+                            <option value="DebitCard">Carte de débit</option>
+                        </select>
+                    </div>
+                    
+                    <div id="moncash-instructions" class="payment-instructions hidden"></div>
+                    <div id="natcash-instructions" class="payment-instructions hidden"></div>
+                    <div id="cashapp-instructions" class="payment-instructions hidden"></div>
+                    <div id="debitcard-instructions" class="payment-instructions hidden"></div>
+
+                    <!-- Section capture d'écran -->
+                    <div class="form-group">
+                        <label for="screenshot-upload">Capture d'écran du paiement *</label>
+                        <div class="screenshot-upload-container">
+                            <input type="file" id="screenshot-upload" name="screenshot" accept="image/*" required>
+                            <label for="screenshot-upload" class="screenshot-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Télécharger la capture d'écran</span>
+                            </label>
+                            <div id="screenshot-preview" class="screenshot-preview hidden">
+                                <img id="preview-image" src="" alt="Aperçu de la capture">
+                                <button type="button" id="remove-screenshot" class="remove-screenshot-btn">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="screenshot-help">Formats acceptés: JPG, PNG, GIF (max 5MB). Î clairement la transaction.</p>
+                        <span id="screenshot-error" class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">Notes supplémentaires (optionnel)</label>
+                        <textarea id="additional-notes" name="additional-notes" placeholder="Informations supplémentaires sur votre commande..." rows="3"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancel-checkout-btn" data-lang-key="cancel-payment">Annuler</button>
+                        <button type="submit" class="checkout-submit-btn" data-lang-key="confirm-payment">Confirmer le Paiement</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="order-confirmation-section" class="page-section">
+            <div class="page-header container">
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="confirmation-title">Commande Confirmée !</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p class="confirmation-message" data-lang-key="confirmation-message">Merci pour votre achat ! Votre commande a été reçue et est en cours de traitement.</p>
+                <div class="confirmation-details-box">
+                    <p><strong data-lang-key="order-number">Numéro de commande :</strong> <span id="order-number"></span></p>
+                    <p><strong data-lang-key="order-date">Date :</strong> <span id="order-date"></span></p>
+                    <p><strong data-lang-key="order-total">Montant total :</strong> <span id="confirmation-total"></span></p>
+                    <p><strong data-lang-key="order-details">Détails de la commande :</strong></p>
+                    <ul id="confirmation-items">
+                        <!-- Les éléments de la commande seront générés dynamiquement -->
+                    </ul>
+                </div>
+                <button class="back-to-home-btn" data-lang-key="back-to-home">Retour à l'accueil</button>
+            </div>
+        </section>
+
+        <section id="history-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="history-title">Historique des Achats</h2>
+                </div>
+            </div>
+            <div class="container">
+                <p id="empty-history-message" class="empty-cart-message" style="display: none;" data-lang-key="history-empty">Vous n'avez encore aucun achat.</p>
+                <div id="history-items-container">
+                    <!-- Les éléments d'historique seront générés dynamiquement -->
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy-policy-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="privacy-policy-title">Politique de Confidentialité</h2>
+                </div>
+            </div>
+            <div class="container text-content">
+                <h3>Introduction</h3>
+                <p>Votre vie privée est importante pour nous. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre site web.</p>
+                <h3>Informations que nous collectons</h3>
+                <ul>
+                    <li><strong>Informations d'identification :</strong> Nous collectons votre ID de joueur et votre nom dans le jeu pour livrer les produits que vous achetez.</li>
+                    <li><strong>Informations de contact :</strong> Nous collectons votre adresse e-mail pour vous envoyer la confirmation de votre commande et d'autres communications relatives à votre achat.</li>
+                    <li><strong>Données de transaction :</strong> Nous collectons les informations relatives à vos achats, telles que les articles commandés et le montant total.</li>
+                </ul>
+                <h3>Comment nous utilisons vos informations</h3>
+                <ul>
+                    <li>Pour traiter et livrer vos commandes.</li>
+                    <li>Pour vous envoyer des confirmations de commande et des mises à jour.</li>
+                    <li>Pour vous offrir un support client.</li>
+                    <li>Pour améliorer et personnaliser votre expérience sur notre site.</li>
+                </ul>
+                <h3>Sécurité des données</h3>
+                <p>Nous prenons des mesures raisonnables pour protéger vos informations personnelles contre l'accès non autorisé, l'altération, la divulgation ou la destruction. Toutes les transactions de paiement sont traitées par des services tiers sécurisés. Nous ne stockons aucune information de carte de crédit sur nos serveurs.</p>
+                <h3>Partage des informations</h3>
+                <p>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Vos informations peuvent être partagées avec les services de paiement pour traiter votre transaction ou avec les développeurs de jeux pour livrer vos achats.</p>
+                <h3>Vos droits</h3>
+                <p>Vous avez le droit de demander l'accès à vos informations personnelles, de les corriger ou de les supprimer. Si vous avez des questions concernant vos données, veuillez nous contacter.</p>
+            </div>
+        </section>
+
+        <section id="faq-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="faq-title">Foire aux Questions (FAQ)</h2>
+                </div>
+            </div>
+            <div class="container text-content">
+                <div class="faq-item">
+                    <h3>Comment ça fonctionne ?</h3>
+                    <p>C'est très simple. Il vous suffit de choisir votre jeu, de sélectionner l'offre de votre choix, d'ajouter l'article à votre panier, d'entrer votre identifiant de jeu, puis de procéder au paiement. Une fois le paiement confirmé, votre solde de jeu est rechargé instantanément.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelles sont les méthodes de paiement disponibles ?</h3>
+                    <p>Nous acceptons plusieurs méthodes de paiement populaires et sécurisées, incluant MonCash, NatCash, Cash App et les cartes de débit.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Est-ce que mes informations sont sécurisées ?</h3>
+                    <p>Oui. Nous utilisons des protocoles de sécurité avancés pour protéger vos informations personnelles. De plus, nous ne stockons aucune information de paiement sensible comme les numéros de carte de crédit. Toutes les transactions sont gérées par des services de paiement tiers de confiance.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Combien de temps faut-il pour que ma commande soit livrée ?</h3>
+                    <p>La plupart des commandes sont traitées et livrées instantanément après la confirmation du paiement. Si vous ne recevez pas votre commande dans les 5 minutes, veuillez vérifier votre historique d'achats ou nous contacter avec votre numéro de commande.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Que faire si j'ai un problème avec ma commande ?</h3>
+                    <p>Si vous rencontrez un problème, veuillez nous contacter immédiatement en utilisant les informations fournies dans la section "Contact". Ayez votre numéro de commande prêt pour que nous puissions vous aider le plus rapidement possible.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="page-section">
+            <div class="page-header container">
+                <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="title-container">
+                    <h2 class="section-title" data-lang-key="contact">Contact</h2>
+                </div>
+            </div>
+            <div class="container text-content">
+                <p>Pour toute question ou assistance, n'hésitez pas à nous contacter via les méthodes suivantes :</p>
+                <p><strong>Email :</strong> support@emperialtopup.com</p>
+                <p><strong>Téléphone :</strong> +509 3230 6000</p>
+                <p><strong>WhatsApp :</strong> +509 3230 6000</p>
+            </div>
+        </section>
+
+        <div id="toast-container"></div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>À propos</h3>
+                <p>Emperial Top Up est votre destination de confiance pour recharger vos jeux préférés en ligne. Simple, rapide et sécurisé.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#" data-target="games-section" data-lang-key="games">Jeux</a></li>
+                    <li><a href="#" data-target="history-section" data-lang-key="history">Historique</a></li>
+                    <li><a href="#" data-target="privacy-policy-section" data-lang-key="privacy-policy">Politique de Confidentialité</a></li>
+                    <li><a href="#" data-target="faq-section" data-lang-key="faq">FAQ</a></li>
+                    <li><a href="#" data-target="contact-section" data-lang-key="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Suivez-nous</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Emperial Top Up. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html> 
